@@ -1,6 +1,10 @@
 import { useState } from "react";
+import Fab from "@mui/material/Fab";
+import TextField from "@mui/material/TextField";
+import AddTaskIcon from "@mui/icons-material/AddTask";
+import Grid from "@mui/material/Grid";
 
-const AddTodo = ({setTodos}) => {
+const AddTodo = ({ setTodos }) => {
   const [task, setTask] = useState("");
 
   const handleNewTasks = (event) => {
@@ -17,17 +21,37 @@ const AddTodo = ({setTodos}) => {
     setTask("");
   };
 
-  return(
+  return (
     <form onSubmit={handleSubmit}>
-        Add task:
-        <input
-          value={task}
-          placeholder="Add New Task"
-          onChange={handleNewTasks}
-        />
-        <button type="submit">Add</button>
-      </form>
-  )
-}
+      <Grid
+        container
+        alignItems="center"
+        justifyContent={"space-evenly"}
+      >
+        <Grid>
+          <TextField
+            value={task}
+            placeholder="Add New Task"
+            color="success"
+            sx={{width: "40ch"}}
+            onChange={handleNewTasks}
+            />
+        </Grid>
+        <Grid>
+          <Fab
+            type="submit"
+            variant="extended"
+            size="medium"
+            color="success"
+            aria-label="add"
+          >
+            <AddTaskIcon sx={{ mr: 1 }} />
+            Add
+          </Fab>
+        </Grid>
+      </Grid>
+    </form>
+  );
+};
 
-export default AddTodo
+export default AddTodo;

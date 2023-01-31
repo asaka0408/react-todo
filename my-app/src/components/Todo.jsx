@@ -1,34 +1,46 @@
+import * as React from "react";
 import { useState } from "react";
-import {TodoList, AddTodo} from './index'
+import { TodoList, AddTodo } from "./index";
+import { CssBaseline, Container } from "@mui/material";
 
 const Todo = () => {
   const initialState = [
     {
       id: 1675144069125,
-      task: "豚星",
+      task: "しゅくだい",
       isCompleted: false,
     },
     {
       id: 1675144069126,
-      task: "豚39",
+      task: "ぎょうむ",
       isCompleted: false,
     },
     {
       id: 1675144069127,
-      task: "どん",
+      task: "かりきゅらむ",
       isCompleted: false,
     },
   ];
 
   const [todos, setTodos] = useState(initialState);
 
-  return(
-    <div>
-      <h1>ToDoList</h1>
-      <AddTodo setTodos={setTodos} />
-      <TodoList todos={todos} setTodos={setTodos}/>
-    </div>
-  )
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <Container
+        maxWidth="sm"
+        sx={{
+          textAlign: 'center'
+        }}
+      >
+        <h1>ToDoList</h1>
+        <AddTodo setTodos={setTodos} />
+        <TodoList todos={todos} setTodos={setTodos} />
+      </Container>
+    </React.Fragment>
+    // <div>
+    // </div>
+  );
 };
 
-export default Todo
+export default Todo;
