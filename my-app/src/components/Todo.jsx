@@ -4,6 +4,7 @@ import { TodoList, AddTodo } from "./index";
 import { CssBaseline, Container } from "@mui/material";
 
 const Todo = () => {
+  // 初期todo
   const initialState = [
     {
       id: 1675144069125,

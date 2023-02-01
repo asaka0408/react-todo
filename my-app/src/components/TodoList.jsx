@@ -7,6 +7,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 const TodoList = ({ todos, setTodos }) => {
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
+  // doneチェック
   const handleUpdateTask = (id) => {
     const prevState = todos.map((todo) => ({ ...todo }));
     const newState = prevState.map((todo) => {
@@ -18,6 +19,7 @@ const TodoList = ({ todos, setTodos }) => {
     setTodos(newState);
   };
 
+  // /todo削除
   const handleRemoveTask = (id) => {
     const newState = todos.filter((todo) => {
       return todo.id !== id;

@@ -5,12 +5,14 @@ import AddTaskIcon from "@mui/icons-material/AddTask";
 import Grid from "@mui/material/Grid";
 
 const AddTodo = ({ setTodos }) => {
+  // inputの値取得
   const [task, setTask] = useState("");
-
+  // inputの内容をbox内に表示
   const handleNewTasks = (event) => {
     setTask(event.target.value);
   };
 
+  // /todo追加
   const handleSubmit = (event) => {
     event.preventDefault();
     if (task === "") return;
